@@ -1,4 +1,4 @@
-﻿using SyncClipboard.Core.Clipboard;
+using SyncClipboard.Core.Clipboard;
 using SyncClipboard.Core.Interfaces;
 using SyncClipboard.Core.Models;
 using System;
@@ -22,7 +22,7 @@ internal class ClipboardListener(IClipboardFactory clipboardFactory, ILogger log
     protected override void RegistSystemEvent(MetaChanged action)
     {
         _action = action;
-        _timer = new Timer(InvokeTick, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
+        _timer = new Timer(InvokeTick, null, TimeSpan.Zero, TimeSpan.FromMilliseconds(50));
     }
 
     protected override void UnRegistSystemEvent(MetaChanged action)
